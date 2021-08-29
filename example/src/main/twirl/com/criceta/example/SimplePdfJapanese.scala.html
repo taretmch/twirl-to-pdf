@@ -1,0 +1,19 @@
+@(fontUrl: String)
+
+<html>
+  <head>
+    <style>
+      @@font-face {
+        font-family: 'ipa';
+        src:         url(file:@fontUrl);
+      }
+      * {
+        font-family: 'ipa', sans-serif;
+      }
+    </style>
+  </head>
+  <body id="content">
+    <p>Hello, <span style="color: red;">world</span>!</p>
+    <p>こんにちは、<span style="color: red;">世界</span>！</p>
+  </body>
+</html>
