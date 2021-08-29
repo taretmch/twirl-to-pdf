@@ -8,13 +8,13 @@ ThisBuild / organizationName := "taretmch"
 val openHtmlVersion = "1.0.9"
 
 lazy val core = (project in file("core"))
-  .settings(name := "twirl-to-pdf")
+  .settings(name := "twirl-to-pdf-core")
   .settings(libraryDependencies ++= Seq(
     "com.openhtmltopdf" % "openhtmltopdf-core"   % openHtmlVersion,
     "com.openhtmltopdf" % "openhtmltopdf-pdfbox" % openHtmlVersion,
     scalaTest % Test
   ))
-  enablePlugins(SbtTwirl)
+  .enablePlugins(SbtTwirl)
 
 lazy val example = (project in file("example"))
   .settings(name := "pdf-example")
@@ -23,7 +23,5 @@ lazy val example = (project in file("example"))
     "com.openhtmltopdf" % "openhtmltopdf-pdfbox" % openHtmlVersion,
     scalaTest % Test
   ))
-  enablePlugins(SbtTwirl)
+  .enablePlugins(SbtTwirl)
   .dependsOn(core)
-
-TwirlKeys.templateImports = Seq.empty
